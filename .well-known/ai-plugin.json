@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Cafe Purr",
+    "name_for_model": "prompt",
+    "description_for_human": "Cafe Purr",
+    "description_for_model": "Directory",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://cafepurr.com/api/forge/openapi.yaml",
+        "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:3333/logo.png",
+    "contact_email": "silas@cafepurr.com",
+    "legal_info_url": "https://www.cafepurr.com/legal"
+}
