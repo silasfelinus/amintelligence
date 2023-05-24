@@ -1,0 +1,23 @@
+{"Drawer01": [
+    { "name": "Navigation Page", "path": "/", "folderName": "floof" },
+    { "name": "Ami", "path": "/ami", "folderName": "amibot" },
+    { "name": "Gallery Page", "path": "/choose", "folderName": "wondercat" },
+    { "name": "Make Art", "path": "/makeart", "folderName": "splash" },
+    { "name": "Bot Cafe", "path": "/botcafe", "folderName": "wonderbot" },
+    { "name": "About", "path": "/about", "folderName": "acrocats" },
+    { "name": "Legal", "path": "/legal", "folderName": "flower" },
+    { "name": "Guestbook", "path": "/guestbook", "folderName": "avatars" },
+    { "name": "Values", "path": "/values", "folderName": "floof" }
+  ],
+  "Drawer02": [
+    { "name": "Welcome Animation", "path": "/hello", "folderName": "default" },
+    { "name": "Word Drops", "path": "/words", "folderName": "splash" },
+    { "name": "Welcome 2", "path": "/new", "folderName": "splash" },
+    { "name": "Home", "path": "/home", "folderName": "background" },
+    { "name": "Title Simple", "path": "/intro", "folderName": "splash" },
+    { "name": "Rain Gallery", "path": "/rain", "folderName": "splash" },
+    { "name": "Theme Builder", "path": "/forge", "folderName": "wondershed" },
+    { "name": "Gift Shop", "path": "/gift", "folderName": "wonderchest" },
+    { "name": "Pulser", "path": "/sanctuary", "folderName": "nostalgia" }
+  ]
+}
