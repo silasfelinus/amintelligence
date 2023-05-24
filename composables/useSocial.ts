@@ -1,10 +1,7 @@
-import { ref, computed } from "vue";
-import { useAppStore } from "../store";
 import type { AsyncState } from "@/types";
 import type { CreateChatCompletionResponse } from "openai";
 
-export const useChatAi = () => {
-  const { selectedAgent } = useAppStore();
+export const useSocial = ({ agent }: { agent: string }) => {
   const state = ref<AsyncState>(null);
   const error = ref();
   const res = ref<CreateChatCompletionResponse>();
@@ -21,13 +18,15 @@ export const useChatAi = () => {
       state.value = "loading";
 
       const result = await fetchWithTimeout<CreateChatCompletionResponse>(
-        `/api/ai`,
+        `/api/social`,
         {
           method: "POST",
-          body: JSON.stringify({
+          body: {
             ...options,
-            agent: options.agent || selectedAgent.value || null,
-          }),})
+            agent,
+          },
+        }
+      );
       if (!result.choices || !result.usage) {
         throw new Error("Invalid AI response");
       }

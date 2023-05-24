@@ -9,5 +9,15 @@ export interface Message {
   createdAt: Date;
   text: string;
 }
+
+export interface Agent {
+  name: string;
+  description: string;
+  avatarUrl: string;
+  intro: string;
+  personality: string;
+  format: string;
+}
+
 export type AsyncState = null | "loading" | "error" | "complete";
 export type SocialPlatforms = "twitter" | "facebook";

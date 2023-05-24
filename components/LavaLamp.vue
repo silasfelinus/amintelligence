@@ -1,4 +1,3 @@
-<!-- LavaLamp.vue -->
 <template>
   <div class="lava-lamp">
     <svg class="lava-lamp-container" viewBox="0 0 200 400">
@@ -21,40 +20,33 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import LavaBubble from "./LavaBubble.vue";
 
-export default defineComponent({
-  components: {
-    LavaBubble,
-  },
-  data() {
-    return {
-      bubbles: [] as Array<{ x: number; y: number; size: number; hue: number }>,
-      bubbleCreationInterval: null as number | null,
-    };
-  },
-  methods: {
-    createBubble() {
-      const size = Math.random() * 15 + 5;
-      const x = Math.random() * (160 - size) + 20;
-      const y = Math.random() * 340;
-      const hue = Math.floor(Math.random() * 360);
+const bubbles = ref([]);
+let bubbleCreationInterval = null;
 
-      this.bubbles.push({ x, y, size, hue });
-    },
-  },
-  mounted() {
-    this.bubbleCreationInterval = window.setInterval(this.createBubble, 1000);
-  },
-  beforeUnmount() {
-    if (this.bubbleCreationInterval) {
-      window.clearInterval(this.bubbleCreationInterval);
-    }
-  },
+const createBubble = () => {
+  const size = Math.random() * 15 + 5;
+  const x = Math.random() * (160 - size) + 20;
+  const y = Math.random() * 340;
+  const hue = Math.floor(Math.random() * 360);
+
+  bubbles.value.push({ x, y, size, hue });
+};
+
+onMounted(() => {
+  bubbleCreationInterval = setInterval(createBubble, 1000);
+});
+
+onBeforeUnmount(() => {
+  if (bubbleCreationInterval) {
+    clearInterval(bubbleCreationInterval);
+  }
 });
 </script>
+
 <style lang="scss">
 .lava-bubbles {
   animation: moveBubbles 10s linear infinite;

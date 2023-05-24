@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
-import { getAgentTraining } from "./agentTraining";
+import * as agents from "@/agents/simpleAgents";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -11,13 +11,16 @@ export default defineEventHandler(async (event) => {
   });
   const openai = new OpenAIApi(configuration);
 
-  const training = getAgentTraining(body.agent);
+  if (!Object.keys(agents).includes(`${body.agent}Agent`)) {
+    throw new Error(`${body.agent} Agent does not exist`);
+  }
 
   const { data } = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
-    messages: body.messages || [],
+    messages: [],
     temperature: body.temperature || 1,
-    ...training(body),
+    // @ts-expect-error checking above if agent exists
+    ...agents[`${body.agent}Agent`](body),
   });
   return data;
 });

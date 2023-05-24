@@ -38,7 +38,6 @@
 </template>
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import "theme-change";
 
 const open = ref(false);
 

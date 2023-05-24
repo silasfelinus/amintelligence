@@ -4,10 +4,16 @@ env:
 extends:
   - eslint:recommended
   - plugin:vue/vue3-essential
-overrides: []
+  - plugin:@typescript-eslint/recommended
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaVersion: latest
   sourceType: module
+  project: './tsconfig.json'
+  extraFileExtensions: [".vue"]
 plugins:
   - vue
-rules: {}
+  - "@typescript-eslint"
+rules: 
+  "@typescript-eslint/explicit-function-return-type": "off"
+overrides: []

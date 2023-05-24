@@ -24,7 +24,7 @@
   </template>
 
   <script setup>
-  import { ref, onMounted } from "vue";
+  import { onMounted } from "vue";
   import { useRandomColor } from "../../../../composables/useRandomColor";
 
   const props = defineProps({
@@ -42,7 +42,7 @@
     },
   });
 
-  const { randomColor, generateRandomColor } = useRandomColor();
+  const { randomColor} = useRandomColor();
 
   const randomXPosition = () => Math.floor(Math.random() * window.innerWidth);
   const randomYPosition = () => Math.floor(Math.random() * -window.innerHeight);

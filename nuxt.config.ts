@@ -1,13 +1,15 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
-export default defineNuxtConfig({
-  modules: [   '@nuxtjs/eslint-module', 'nuxt-content-assets', '@nuxt/content', '@nuxtjs/tailwindcss',
-   '@pinia/nuxt'],
-
-
-  eslint: {
-    /* module options */
+export default {
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt'
+  ],
+  runtimeConfig: {
+    public: {
+      appURL: "https://cafepurr.com",
+    },
+    OPENAI_API_KEY: process.env.NUXT_OPENAI_API_KEY || "",
   },
-
   content: {
     documentDriven: true
   },
@@ -15,4 +17,4 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   }
-})
+}
