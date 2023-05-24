@@ -9,10 +9,10 @@
     },
     "api": {
         "type": "openapi",
-        "url": "https://cafepurr.com/api/forge/openapi.yaml",
+        "url": "https://cafepurr.com/api/openapi.yaml",
         "is_user_authenticated": false
     },
-    "logo_url": "http://localhost:3333/logo.png",
+    "logo_url": "http://cafepurr.com/logo.png",
     "contact_email": "silas@cafepurr.com",
     "legal_info_url": "https://www.cafepurr.com/legal"
 }

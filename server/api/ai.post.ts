@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
-import * as agents from "@/agents";
+import * as agents from "../../agents";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
