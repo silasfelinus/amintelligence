@@ -32,7 +32,7 @@
     const x = Math.random() * (100 - size);
     const y = 0;
     const speed = Math.random() * 6 + 4;
-    const { randomColor, generateRandomColor } = useRandomColor();
+    const { randomColor} = useRandomColor();
     const color = randomColor.value;
 
     bubbles.value.push({ x, y, size, speed, color });

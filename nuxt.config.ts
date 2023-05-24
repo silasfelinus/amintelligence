@@ -1,6 +1,8 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['nuxt-content-assets', '@nuxt/content', '@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'theme-change'],
+  modules: [   '@nuxtjs/eslint-module', 'nuxt-content-assets', '@nuxt/content', '@nuxtjs/tailwindcss',
+   '@pinia/nuxt'],
+
 
   eslint: {
     /* module options */

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps<{
   url: string;
   temperature: number;
@@ -9,7 +9,7 @@ const { chat, state, firstMessage } = useChatAi({ agent: "facebook" });
 const generate = () => nextTick(() => chat(props));
 defineExpose({ generate });
 
-function copyToClipboard(text) {
+function copyToClipboard(string: text) {
   navigator.clipboard.writeText(text).then(function() {
     console.log('Copying to clipboard was successful!');
   }, function(err) {
