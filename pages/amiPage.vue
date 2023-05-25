@@ -57,7 +57,7 @@ const todos = ref({});
 const loading = ref(true);
 const error = ref(null);
 
-axios.get('/json/ami.json')
+$fetch('https://cafepurr.com/json/ami.json')
     .then(response => {
         webpage.value = response.data.webpage;
         amiGames.value = response.data.amiGames;

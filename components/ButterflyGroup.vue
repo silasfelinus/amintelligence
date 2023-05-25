@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import ButterflySingle from './ButterflySingle.vue';
+import ButterflySingle from './AmiButterfly.vue';
 
 const butterflies = ref([
   { x: 100, y: 100 },

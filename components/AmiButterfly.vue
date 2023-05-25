@@ -21,9 +21,9 @@
   </template>
 
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref, onUnmounted } from "vue";
-import { useRandomColor } from "./../composables/useRandomColor";
+import { useRandomColor } from "../composables/useRandomColor";
 import { makeNoise2D } from "open-simplex-noise";
 
 const noise2D = makeNoise2D(Date.now());
@@ -78,7 +78,7 @@ function handleClick() {
     requestAnimationFrame(animate);
   }
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     const dxMouse = e.clientX - x.value;
     const dyMouse = e.clientY - y.value;
     const distance = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
